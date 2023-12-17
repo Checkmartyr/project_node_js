@@ -39,7 +39,7 @@
 
 <body>
     <header class="header">
-        <a href="#" class="logo">Logo</a>
+        <a href="/"" class="logo">Logo</a>
         
    
 
@@ -179,7 +179,12 @@
                                 <p class="card-text"><%=Post[i].description %></p>
                             </div>
                             <div class="mb-5 d-flex justify-content-around">
-                                <h3>190$</h3>
+                                <% if(Post[i].price != null ) {%>
+                                <h3><%=Post[i].price%> THB</h3>
+                                <% } %>
+                                <% if (Post[i].price == null) { %>
+                                    <h3> Free </h3>
+                                    <%}%>
                                 <%if (loggedIn){%>
                                     <% if(Post[i].DrawBy != UserData._id && Post[i].Owner != UserData._id) { %>
                                         <form action="/buy/<%=Post[i]._id %>" method="post">

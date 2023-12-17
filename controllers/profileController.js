@@ -8,9 +8,9 @@ module.exports = async (req,res)=>{
     let UserData = await User.findById(req.session.userId)
     const myBoughtDrawing = await Drawing.find({Owner:req.session.userId})
     const myDrawing = await Drawing.find({DrawBy:req.session.userId})
-    console.log("myBoughtDrawing"+ myBoughtDrawing);
-    console.log("===============================");
-    console.log("mytDrawing"+myDrawing);
+    // console.log("myBoughtDrawing"+ myBoughtDrawing);
+    // console.log("===============================");
+    // console.log("mytDrawing"+myDrawing);
     res.render('profile',{UserData,
         myBoughtDrawing,
         myDrawing

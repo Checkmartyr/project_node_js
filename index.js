@@ -26,7 +26,8 @@ const uploaddbcontroller = require('./controllers/uploaddbcontroller')
 const menuController = require('./controllers/menuController')
 const buyController = require('./controllers/buyController')
 const profileController = require('./controllers/profileController')
-
+const drawcontroller = require('./controllers/drawcontroller')
+const editController = require('./controllers/editController')
 // const upload = require('./controllers/uploadController')
 
 
@@ -43,7 +44,7 @@ const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
 
 
-
+ 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './public/uploads')
@@ -80,7 +81,7 @@ app.use("*", (req, res, next) => {
     next()
 })
 app.set('view engine', 'ejs')
-
+     
 
 app.get("/",indexcontroller)
 app.get('/manu', menuController)
@@ -88,9 +89,13 @@ app.post("/register",redirectIfAuth,stroreUsercontroller)
 app.post("/login",redirectIfAuth,loginUserController)
 
 app.post("/buy/:buyID",authMiddleware,buyController)
-app.get('/profile/:id',authMiddleware,profileController)
 
+app.get('/profile/:id',authMiddleware,profileController)
+app.get('/product/:id',authMiddleware,drawcontroller)
+
+app.post('/edit/:id',authMiddleware,editController)
 app.post('/upload', uploaddbcontroller,uploadController)
+
 app.get('/logout', logoutController)
 app.get("/login_or_register",redirectIfAuth,loginregisterController)
 app.get('/create',authMiddleware,createController)

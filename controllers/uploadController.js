@@ -22,8 +22,8 @@ module.exports =  async (req,res)=>{
             { filePath : filePath },
             { new: true }
           );
-        
-        Drawing.create({filePath: filePath, DrawBy: userId,title:"test",description: "this pic made by :"+ userId})
+        console.log(req.body);
+        Drawing.create({filePath: filePath, DrawBy: userId,title:req.body.title,description:req.body.detail,price:req.body.price,category:req.body.type})
 
 
         if (!result) {

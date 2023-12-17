@@ -6,15 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/manu.css">
     <link rel="stylesheet" href="css/web.css">
+    <link rel="stylesheet" href="css/create.css">
     <link rel="stylesheet" href="css/buttonshop.css">
-    
-    
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
+
+
 <body>
     <header class="header">
-        <a href="#" class="logo">Logo</a>
-        
+        <a href="/" class="logo">Logo</a>
+         
    
         <nav class="navigation">
             
@@ -63,98 +64,42 @@
           </div>
           </div>
     </a>
-    
 </button>
 
+<div class="popup">
+    <div class="top-bar">
+        <p class="image-name"></p>
+        <span class="close-btn"></span>
+    </div>
+    <div class="popupcontent">
+        <div class="showimg">
+            <img src="pic/img1.jpg" class="large-image" alt="">
+            <h1 class="index">01</h1>
+        </div>
+        <div class="comment">
+            <div> comment</div>
+        </div>
+    </div>
+</div>
 <div class="products">
     <% if(Post != null && Post.length > 0) { %>
+        <script>
+            var posts = <%- JSON.stringify(Post) %>;
+        </script>
         <% for(let i = 0; i < Post.length; i++) { %>
             <!-- <p class="alert alert-danger">
-                <%= Post[i] %>
+                
             </p> -->
             <div class="item">
-                <a href="/product/<%=Post[i]._id %>"> <img src="<%=Post[i].filePath %>" class="card-img-top" alt="..."></a>
+                <!-- <a href="/product/<%=Post[i]._id %>"> <img src="<%=Post[i].filePath %>" class="card-img-top" alt="..."></a> -->
+                 <img src="<%=Post[i].filePath %>" class="card-img-top" alt="...">
+
             </div>
-            <!-- <div class="col">
-                <div class="card">
-                    <a href="/product/<%=Post[i]._id %>"><img src="<%=Post[i].filePath %>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h5 class="card-title"><%=Post[i].title %></h5>
-                        <p class="card-text"><%=Post[i].description %></p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div> -->
         <% } %>
     <% } %>
-    <!-- <div class="item">
-        <img src="pic/pexels-photo-691668.jpeg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/back2.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/back1.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/user.avif" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/user.avif" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/pexels-photo-691668.jpeg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/back2.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/back1.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/back2.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/user.avif" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/user.avif" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/back2.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/user.avif" alt="">
-    </div>
-    <div class="item">
-        <img src="pic/dish4.jpg" alt="">
-    </div> -->
 </div>
     
    
 </body>
+<script src="js/manu.js"></script>
 </html>
