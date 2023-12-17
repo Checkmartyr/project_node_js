@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh ;
+    background-position: center;
+    background-size: cover;
+    background: url(pexels2.jpeg);
+}
+
+
+
+.warpper {
+ 
+    position: relative  ;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.5s ease , height 0.2s ease;
+    z-index: 99;
+    
+
+
+}
+.warpper.active{
+    height: 480px;
+}
+
+
+/* .warpper .form-box.login{ */
+    /* display: none; */
+
+
+
+.warpper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.warpper .active {
+    height: 520px  ;
+}
+
+.warpper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.warpper.active .form-box.register {
+    transition: transform 0.18s ease;
+   
+    transform: translateX(0);
+}
+
+.warpper .form-box {
+    width: 100%;
+    padding: 50px;
+}
+
+
+.form-box h2 {
+    width: 100%;
+    font-size: 2em;
+    color: #fdfdfd;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.inputbox label{
+    position: absolute;
+    top:50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    color: #ffffff;
+    transition: 0.5s;
+
+}
+
+
+.inputbox input:focus~label,
+.inputbox input:valid~label {
+    top: -5px;
+}
+
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.inputbox .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+.remember-forget {
+    font-size: .9em;
+    font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+}
+.remember-forget label input {
+    margin-right: 3px;
+    accent-color: #c7d7e3;
+
+}
+.remember-forget a {
+    color: #c7d7e3;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+.LoginAcc {
+    width: 100%;
+    height: 45px;
+    background: #2f4657;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: aliceblue;
+    font-size: 1em;
+    font-weight: 500;
+}
+.login-register {
+    font-size: 0.9em;
+    width: 500;
+    text-align: center;
+    font-weight: 100%;
+    margin: 25px 0 10px;
+    color: #c7d7e3;
+}
+.login-register p a {
+    text-decoration: none;
+    color: #c7d7e3;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+   
+
+
+}
+:root{
+    --main-color:#0013131a0000;
+    --black:#13131a;
+    background: #ffffff;
+    --bg:#013131a0103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+
+
+.header{
+    background: var(--bg);
+    background: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem;
+    border-bottom: var(--border);
+    position: relative;
+    top:0; left: 0; right: 0;
+    z-index: 99;
+
+   
+    
+}
+
+body {
+    height: 5rem;
+    min-height: 100vh;
+    /* background: url(pic/pexels2.jpeg); */
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+.logo{
+    left: 0;
+    font-size: 1.8em;
+    color: aliceblue;
+    user-select: none;
+}
+.navigation .btnlogin-popup{
+
+    justify-content: center;
+    text-align: center;
+   
+
+}
+.navigation a {
+    position: relative;
+    padding: 8px;
+    margin: 10px;
+    font-size: 0.8em;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnlogin-popup {
+    width: 80px;
+    height: 34px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9;
+    color: #ffffff;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flexbox;
+    transition:  transform .5s;
+    
+    
+}
+
+.navigation .btnlogout{
+    width: 80px;
+    height: 34px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9;
+    color: #ffffff;
+    margin-left: 10px;
+    cursor: pointer;
+    /* display: flexbox; */
+  
+  }
+
+.navigation .btnlogin-popup:hover {
+
+    background: #ffffff;
+    color: black;
+
+}
+
+
+
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.home{
+    position: absolute;
+    width: 100%;
+    height: 110vh;
+    text-align: center;
+    top: 40%;
+    
+ 
+}
+
+
+
+.home .content h1{
+    font-size: 10vh;
+    text-transform: uppercase;
+    color:#ffffff;
+  
+}
+

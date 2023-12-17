@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
+    
+    <link rel="stylesheet" href="css/web.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/product.css">
+  
+    
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+       
+		
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+   
+
+
+</head>
+
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Logo</a>
+        
+   
+
+        <nav class="navigation">
+            
+            <a href="/">Home</a>
+            <a href="/manu">Manu</a>
+            
+            <a href="/commu">commu</a>
+            <%if (!loggedIn){%>
+                
+                <a href="/login_or_register" class="btnlogin-popup">Login</a>
+            <%}%>
+            <%if (loggedIn){%>
+                
+                    <!-- <a href="/profile"> <%= UserData.username%> </a>
+                    <form action="/logout" class="logout" method="post">
+                    <button class="btnlogout btnlogin-popup "  type="submit">logout</button>
+                    </form> -->
+                    <a href="/create">create</a>
+                    <a href="/profile/<%= UserData._id%>" > <%= UserData.username%> </a>
+                    <a href="/logout"  class="btnlogin-popup">Logout</a>
+
+            <%}%>
+        </nav>
+        
+   
+    </header>
+
+
+  
+
+	<!--welcome-hero start -->
+    <section id="home" class="welcome-hero">
+        <div class="container">
+            <div class="welcome-hero-txt">
+            <h1>Hello welcome to Kayfan websigh</h1>
+            </div>
+            <div class="welcome-hero-serch-box">
+                <div class="welcome-hero-form">
+                    <div class="single-welcome-hero-form">
+                        <h3>search</h3>
+                        <form action="index.html">
+                            <input type="text" placeholder="Ex: palce, resturent, food, automobile" />
+                        </form>
+                        <div class="welcome-hero-form-icon">
+                            <i class="flaticon-list-with-dots"></i>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="welcome-hero-serch">
+                    <button class="welcome-hero-btn" onclick="window.location.href='#'">
+                         search  <i data-feather="search"></i> 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section><!--/.welcome-hero-->
+    <!--welcome-hero end -->
+
+    <!--list-topics start -->
+    <section id="list-topics" class="list-topics">
+        <div class="container">
+            <div class="list-topics-content">
+                <ul>
+                    <li>
+                        <div class="single-list-topics-content">
+                            <div class="single-list-topics-icon">
+                                <i class="flaticon-restaurant"></i>
+                            </div>
+                            <h2><a href="#">resturent</a></h2>
+                            <p>150 listings</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-list-topics-content">
+                            <div class="single-list-topics-icon">
+                                <i class="flaticon-travel"></i>
+                            </div>
+                            <h2><a href="#">destination</a></h2>
+                            <p>214 listings</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-list-topics-content">
+                            <div class="single-list-topics-icon">
+                                <i class="flaticon-building"></i>
+                            </div>
+                            <h2><a href="#">hotels</a></h2>
+                            <p>185 listings</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-list-topics-content">
+                            <div class="single-list-topics-icon">
+                                <i class="flaticon-pills"></i>
+                            </div>
+                            <h2><a href="#">healthcaree</a></h2>
+                            <p>200 listings</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-list-topics-content">
+                            <div class="single-list-topics-icon">
+                                <i class="flaticon-transport"></i>
+                            </div>
+                            <h2><a href="#">automotion</a></h2>
+                            <p>120 listings</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+<!-- manu product -->
+
+
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Popular Photo</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+            <% if(Post != null && Post.length > 0) { %>
+                <% for(let i = 0; i < Post.length; i++) { %>
+                    <!-- <p class="alert alert-danger">
+                        <%= Post[i] %>
+                    </p> -->
+                    <div class="col">
+                        <div class="card">
+                            <a href="/product/<%=Post[i]._id %>"><img src="<%=Post[i].filePath %>" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <h5 class="card-title"><%=Post[i].title %></h5>
+                                <p class="card-text"><%=Post[i].description %></p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <%if (loggedIn){%>
+                                    <% if(Post[i].DrawBy != UserData._id && Post[i].Owner != UserData._id) { %>
+                                        <form action="/buy/<%=Post[i]._id %>" method="post">
+                                            <button type="submit" class="btn btn-primary">Buy Now</button>
+                                        </form>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="./pic/dish2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIRAMISU CAKE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+ 
+
+<!-- menu footer ends -->
+<
+    
+
+
+<footer>
+
+<html>
+
+
+  <footer class="footer">
+  
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="web.html">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="manu.html">Manu</a></li>
+      <li class="menu__item"><a class="menu__link" href="create.html">Create </a></li>
+      <li class="menu__item"><a class="menu__link" href="commu.html">Commu</a></li>
+     
+
+    </ul>
+    <p>&copy;2023 project | weite something</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+
+</footer>
+
+
+    <script src="js/web.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/upload.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+		<script src="assets/js/jquery.js"></script>
+        
+       
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		
+
+      
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+
+       
+    
+</body>
+</html>
+
+    

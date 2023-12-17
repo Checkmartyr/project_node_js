@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+    
+</head>
+<body>
+    <section class="main-login" id="main-login">
+        <div class="warpper">
+
+
+            
+         <div class="form-box login">
+                <h2>Login</h2>
+                <% if (passworderror != null) { %>
+                    <div class="error">
+                        <h2 style="padding-top: 2 em; font: 1em sans-serif; color: #00ff73;" >
+                            <%= passworderror %>
+                        </h2>
+                            
+                    </div>
+
+                  <% } %>
+                  
+                  <% if (emailerror != null) { %>
+                    <div class="error">
+                        <h2 style="padding-top: 2 em; font: 1em sans-serif; color: #00ff73; font-weight: bold;">
+                            <%= emailerror %>
+                        </h2>
+                    </div>
+
+                  <% } %>   
+                <form action="/login" method="POST">
+                    <div class="inputbox">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email " name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="icon">
+                            <ion-icon name="lock-open-outline"></ion-icon>
+                        </span>
+                        <input type="password" name="password" required>
+                        <label> Password </label>
+                    </div>
+                    <!-- <div class="remember-forget">
+                        <label>
+                            <input type="checkbox">Remember me
+                        </label>
+                        <a href="#">Forgot password</a>
+                    </div> -->
+
+                    <button type="submit" class="LoginAcc">Login</button>
+                        <div class="login-register">
+                        <p>Don't have an account?
+                        <a href="#" class="register-link">Register</a>
+                    </p>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="form-box register ">
+                <h2>Registation</h2>
+                <% if (errors != null) { %>
+                    <div class="error">
+                        <h2 style="padding-top: 2 em; font: 1em sans-serif; color: #00ff73; font-weight: bold;">
+                            <%= errors %>
+                        </h2>
+                    </div>
+
+                  <% } %>                  
+                <form action="/register" method="POST">
+                    <div class="inputbox">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <input type="text"  name="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="icon">
+                            <ion-icon name="lock-open-outline"></ion-icon>
+                        </span>
+                        <input type="password"   name="password" required>
+                        <label>Password</label>
+                    </div>
+                    
+                    <!-- <div class="remember-forget">
+                        <label>
+                            <input type="checkbox">I agree to the condition
+                        </label>
+                    
+                    </div> -->
+                    <button type="submit" class="LoginAcc">Login</button>
+                        <div class="login-register">
+                        <p>Alrady have an account?
+                        <a href="#" class="login-link">Login</a>
+                    </p>
+                    </div>
+                </form>
+            </div>
+    <script src="js/web.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</body>
+<% if (active) { %>
+    <script>
+    console.log(' 1 <%= errors%>');
+    const warp1 = document.querySelector('.warpper');
+    warpper.classList.remove('active');
+    </script>
+
+<% } %>
+<%  if (!active) { %>
+    <script>
+        console.log(' 2 <%= errors%>');
+        const warp2 = document.querySelector('.warpper');
+        warpper.classList.add('active');
+    </script>
+<% } %>
+
+</html>
