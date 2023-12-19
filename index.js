@@ -29,6 +29,7 @@ const profileController = require('./controllers/profileController')
 const drawcontroller = require('./controllers/drawcontroller')
 const editController = require('./controllers/editController')
 const commentcontroller = require('./controllers/commentcontroller')
+const deleateController = require('./controllers/deleateController')
 // const upload = require('./controllers/uploadController')
 
 
@@ -99,7 +100,7 @@ app.get('/product/:id',authMiddleware,drawcontroller)
 
 app.post('/edit/:id',authMiddleware,editController)
 app.post('/upload', uploaddbcontroller,uploadController)
-
+app.post('/delate/:id',authMiddleware,deleateController)
 app.get('/logout', logoutController)
 app.get("/login_or_register",redirectIfAuth,loginregisterController)
 app.get('/create',authMiddleware,createController)

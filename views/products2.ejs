@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="../css/manu.css">
     <link rel="stylesheet" href="../css/web.css">
     <link rel="stylesheet" href="../css/buttonshop.css">
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    
+    <link rel="stylesheet" href="../css/create.css">
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
     <header class="header">
-        <a href="/" class="logo" >
-        <img src="../pic/Logo.png" alt=""></a>
+        <a href="/" class="logo">Logo</a>
         
-
+   
         <nav class="navigation">
             
             <a href="/">Home</a>
             <a href="/manu">Manu</a>
+            
+            <a href="/commu">commu</a>
             <%if (!loggedIn){%>
                 
                 <a href="/login_or_register" class="btnlogin-popup">Login</a>
@@ -39,14 +38,47 @@
 
             <%}%>
         </nav>
-    </header>
-
          
  
    
 </header>
+<style>
+    .profile{ 
+        display: flex;
+        flex-direction: row;
+    }
+    .line{
+        width: 40px;
+        background-color: red;
+    }
+    .products{
+        display: flex;
+        max-width: 50%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
 
-<!-- 
+    img{
+        max-width: 400px;
+        min-width: 300px;
+        height: auto;
+    }
+    .main_containers{
+        align-items: center;
+        justify-content: center;
+    }
+    .titleimg{
+        width: auto;
+        height: auto;
+        background-color: gray;
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+
+</style>
 <div class="profile">
     <button class="button">
         <a href="shop.html">
@@ -69,81 +101,63 @@
               </div>
         </a>
         
-    </button> -->
-
-
-<div class="profile-user">
-    <img src="../pic/user.avif" class="profile-picture">
-    <p class="user-name">John</p>
-    <p class="detail-profile">
-        i dreawing 1 pic in 1 hours
-    </p>
-</div>
-
-
-<div class="ower-pic">
-    <p>My Owner Drawing</p>
-</div>
-
-    <div class="product">
-        
-        <% if(myBoughtDrawing != null && myBoughtDrawing.length > 0) { %>
-            <% for(let i = 0; i < myBoughtDrawing.length; i++) { %>
-
-                <div class="item">
-                    <!-- <a href="/product/<%=myBoughtDrawing[i]._id %>">  -->
-                        <img src="<%=myBoughtDrawing[i].filePath %>" class="card-img-top" alt="...">
-                    <!-- </a> -->
+    </button>
+    
+    <div class="products">
+        <p class="titleimg"><%= did.title %></p>
+                <div >
+                    <img src="<%=did.filePath %>"  alt="...">
                 </div>
-            <% } %>
-        <% } %>
+
     </div>
+
+
     <div class="line"></div>
 
-
-<div class="my-pic">
-    <p>My Drawing</p>
-</div>
-
-
-    <div class="product">
-        
-        <% if(myDrawing != null && myDrawing.length > 0) { %>
-            <% for(let i = 0; i < myDrawing.length; i++) { %>
-                <div class="item">
-                    <a href="/product/<%=myDrawing[i]._id %>"> <img src="<%=myDrawing[i].filePath %>" class="card-img-top" alt="..."></a>
+    <div class="main_containers">
+        <form class="form-containe" action="/edit/<%= did._id %>" method="post">
+            <div class="upload_detail_container">
+                <h2> Edit Detail picture</h2>
+                <div class="box_input">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="title"  name = "title" value="<%= did.title %>">
+                    <label>Name</label>
+                </div>
+                <div class="box_input">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="description" name="description"  value="<%= did.description %>" >
+                    <label>description</label>
+                </div>
+                <div class="box_input">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="price" name="price"  value="<%= did.price %>" >
+                    <label>price</label>
+                </div>
+                <div class="type_input">
+                    <span class="icon">
+                        <ion-icon name="mail-outline" ></ion-icon>
+                    </span>
+                </div>
+                <div class="box_input">
+                    <input type="category" name="category"  value="<%= did.category %>">
+                    <label>category</label>
                 </div>
 
-            <% } %>
-        <% } %>
-    </div>    
-</div>
-<footer class="footer">
-  
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="web.html">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="manu.html">Manu</a></li>
-      <li class="menu__item"><a class="menu__link" href="create.html">Create </a></li>
-      <li class="menu__item"><a class="menu__link" href="commu.html">Commu</a></li>
-     
+                <button type="submit" class="submit_detail">Save</button>
+            </div>
+        </form>
+    </div>
+    
 
-    </ul>
-    <p>&copy;2023 project | weite something</p>
-  </footer>
+
+</div>
+
    
 </body>
 </html>

@@ -1,0 +1,70 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    background-color: antiquewhite;
+}
+.profile{ 
+    display: flex;
+    flex-direction: row;
+}
+.line{
+    width: 40px;
+    background-color: rgb(0, 0, 0);
+}
+.ower-pic{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    margin: 3rem;
+    border-bottom: 2px solid #636262; /* เพิ่มเส้นใต้รูปภาพ */
+}
+
+
+.product{
+
+    max-width: 100%;
+    width: 197vh;
+    column-count: 4;
+    column-gap: 10px;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 1rem;
+
+}
+
+.profile-user {
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    border-radius: 100%;
+    width: 30rem; /* กำหนดความกว้างเป็น 100px */
+    height: auto; /* ให้ความสูงปรับอัตโนมัติเพื่อรักษาสัดส่วน */
+    margin: 0 auto; /* ย้ายลงมาตรงกลาง */
+}
+.user-name {
+    font-size: 4rem;
+}
+.detail-profile{
+    font-size: 1rem;
+    
+}
+
+.my-pic{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    margin: 3rem;
+    border-bottom: 2px solid #0a0a0a;
+}

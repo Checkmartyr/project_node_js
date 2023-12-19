@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="../css/manu.css">
     <link rel="stylesheet" href="../css/web.css">
     <link rel="stylesheet" href="../css/buttonshop.css">
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/footer.css">
     
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
     <header class="header">
-        <a href="/" class="logo" >
-        <img src="../pic/Logo.png" alt=""></a>
+        <a href="/" class="logo">Logo</a>
         
-
+   
         <nav class="navigation">
             
             <a href="/">Home</a>
             <a href="/manu">Manu</a>
+            
+            <a href="/commu">commu</a>
             <%if (!loggedIn){%>
                 
                 <a href="/login_or_register" class="btnlogin-popup">Login</a>
@@ -34,19 +33,28 @@
                     <button class="btnlogout btnlogin-popup "  type="submit">logout</button>
                     </form> -->
                     <a href="/create">create</a>
-                    <a href="/profile/<%= UserData._id%>" > <%= UserData.username%> </a>
+                    <a href="#" > <%= UserData.username%> </a>
                     <a href="/logout"  class="btnlogin-popup">Logout</a>
 
             <%}%>
         </nav>
-    </header>
-
          
  
    
 </header>
-
-<!-- 
+<style>
+    .profile{ 
+        display: flex;
+        flex-direction: row;
+    }
+    .line{
+        width: 40px;
+        background-color: red;
+    }
+    .products{
+        max-width: 50%;
+    }
+</style>
 <div class="profile">
     <button class="button">
         <a href="shop.html">
@@ -69,45 +77,23 @@
               </div>
         </a>
         
-    </button> -->
-
-
-<div class="profile-user">
-    <img src="../pic/user.avif" class="profile-picture">
-    <p class="user-name">John</p>
-    <p class="detail-profile">
-        i dreawing 1 pic in 1 hours
-    </p>
-</div>
-
-
-<div class="ower-pic">
-    <p>My Owner Drawing</p>
-</div>
-
-    <div class="product">
-        
+    </button>
+    
+    <div class="products">
+        <p>My Owner Drawing</p>
         <% if(myBoughtDrawing != null && myBoughtDrawing.length > 0) { %>
             <% for(let i = 0; i < myBoughtDrawing.length; i++) { %>
 
                 <div class="item">
-                    <!-- <a href="/product/<%=myBoughtDrawing[i]._id %>">  -->
-                        <img src="<%=myBoughtDrawing[i].filePath %>" class="card-img-top" alt="...">
-                    <!-- </a> -->
+                    <a href="/product/<%=myBoughtDrawing[i]._id %>"> <img src="<%=myBoughtDrawing[i].filePath %>" class="card-img-top" alt="..."></a>
                 </div>
             <% } %>
         <% } %>
     </div>
     <div class="line"></div>
-
-
-<div class="my-pic">
-    <p>My Drawing</p>
-</div>
-
-
-    <div class="product">
-        
+    
+    <div class="products">
+        <p>My Drawing</p>
         <% if(myDrawing != null && myDrawing.length > 0) { %>
             <% for(let i = 0; i < myDrawing.length; i++) { %>
                 <div class="item">
@@ -118,32 +104,7 @@
         <% } %>
     </div>    
 </div>
-<footer class="footer">
-  
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="web.html">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="manu.html">Manu</a></li>
-      <li class="menu__item"><a class="menu__link" href="create.html">Create </a></li>
-      <li class="menu__item"><a class="menu__link" href="commu.html">Commu</a></li>
-     
 
-    </ul>
-    <p>&copy;2023 project | weite something</p>
-  </footer>
    
 </body>
 </html>

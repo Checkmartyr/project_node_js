@@ -39,16 +39,14 @@
 
 <body>
     <header class="header">
-        <a href="/"" class="logo">Logo</a>
+        <a href="/" class="logo" >
+        <img src="../pic/Logo.png" alt=""></a>
         
-   
 
         <nav class="navigation">
             
             <a href="/">Home</a>
             <a href="/manu">Manu</a>
-            
-            <a href="/commu">commu</a>
             <%if (!loggedIn){%>
                 
                 <a href="/login_or_register" class="btnlogin-popup">Login</a>
@@ -65,14 +63,12 @@
 
             <%}%>
         </nav>
-        
-   
     </header>
 
 
   
 
-	<!--welcome-hero start -->
+	<!-- welcome-hero start
     <section id="home" class="welcome-hero">
         <div class="container">
             <div class="welcome-hero-txt">
@@ -99,11 +95,11 @@
             </div>
         </div>
 
-    </section><!--/.welcome-hero-->
+    </section></.welcome-hero-->
     <!--welcome-hero end -->
 
     <!--list-topics start -->
-    <section id="list-topics" class="list-topics">
+    <!-- <section id="list-topics" class="list-topics">
         <div class="container">
             <div class="list-topics-content">
                 <ul>
@@ -154,7 +150,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --> 
 
 
 
@@ -173,7 +169,9 @@
                     </p> -->
                     <div class="col">
                         <div class="card">
-                            <a href="/product/<%=Post[i]._id %>"><img src="<%=Post[i].filePath %>" class="card-img-top" alt="..."></a>
+                            <!-- <a href="/product/<%=Post[i]._id %>"> -->
+                                <img src="<%=Post[i].filePath %>" class="card-img-top" alt="...">
+                            <!-- </a> -->
                             <div class="card-body">
                                 <h5 class="card-title"><%=Post[i].title %></h5>
                                 <p class="card-text"><%=Post[i].description %></p>
@@ -197,127 +195,6 @@
                     </div>
                 <% } %>
             <% } %>
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish5.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="./pic/dish2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISU CAKE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
  

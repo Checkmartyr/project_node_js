@@ -15,15 +15,14 @@
 
 <body>
     <header class="header">
-        <a href="/" class="logo">Logo</a>
-         
-   
+        <a href="/" class="logo" >
+        <img src="../pic/Logo.png" alt=""></a>
+        
+
         <nav class="navigation">
             
             <a href="/">Home</a>
             <a href="/manu">Manu</a>
-            
-            <a href="/commu">commu</a>
             <%if (!loggedIn){%>
                 
                 <a href="/login_or_register" class="btnlogin-popup">Login</a>
@@ -35,11 +34,13 @@
                     <button class="btnlogout btnlogin-popup "  type="submit">logout</button>
                     </form> -->
                     <a href="/create">create</a>
-                    <a href="/profile" > <%= UserData.username%> </a>
+                    <a href="/profile/<%= UserData._id%>" > <%= UserData.username%> </a>
                     <a href="/logout"  class="btnlogin-popup">Logout</a>
 
             <%}%>
         </nav>
+    </header>
+
          
  
    

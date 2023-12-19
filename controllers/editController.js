@@ -15,7 +15,7 @@ module.exports =  async (req, res) => {
       }
     console.log(update);
 
-    res.redirect('/profile/req.session.userId')
+    res.redirect(`/profile/${req.session.userId}`)
     
     // res.render('products',{UserData, did})
     

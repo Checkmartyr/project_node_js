@@ -54,6 +54,11 @@ body {
     color: aliceblue;
     user-select: none;
 }
+.logo img{
+    max-width: 60px; /* กำหนดความกว้างของรูปภาพไม่เกิน 100% ของพื้นที่ที่รูปภาพอยู่ */
+    height: 60px;
+    border-radius: 100%; 
+}
 .navigation .btnlogin-popup{
 
     justify-content: center;
