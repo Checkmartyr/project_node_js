@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/create.css">
     <link rel="stylesheet" href="css/buttonshop.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/comment.css" />
 </head>
 
 
@@ -77,7 +78,25 @@
             <h1 class="index">01</h1>
         </div>
         <div class="comment">
-            <div> comment</div>
+            <div class="container" >
+                
+                <div class="form-comment">
+                    <%if (loggedIn){%>
+                
+                        <form method="post" id ="fromId" class="from-post opened">
+                    <%}%>
+                    <%if (!loggedIn){%>
+                
+                        <form method="post" id ="fromId" class="from-post">
+                    <%}%>
+                        <textarea class="commentText" name="commentText" placeholder="Your Comment here" required></textarea>
+                        <button class="btnform" type="submit" >Submit Comment</button>
+                    </form>
+                    <div class="comments">
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </div>
 </div>
@@ -85,10 +104,11 @@
     <% if(Post != null && Post.length > 0) { %>
         <script>
             var posts = <%- JSON.stringify(Post) %>;
+            var AllUserDate = <%- JSON.stringify(allUserData) %>;
+            var Comments = <%- JSON.stringify(comments) %>;
         </script>
         <% for(let i = 0; i < Post.length; i++) { %>
             <!-- <p class="alert alert-danger">
-                
             </p> -->
             <div class="item">
                 <!-- <a href="/product/<%=Post[i]._id %>"> <img src="<%=Post[i].filePath %>" class="card-img-top" alt="..."></a> -->
@@ -102,4 +122,5 @@
    
 </body>
 <script src="js/manu.js"></script>
+<script src="js/comment.js"></script>
 </html>

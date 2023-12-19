@@ -28,6 +28,7 @@ const buyController = require('./controllers/buyController')
 const profileController = require('./controllers/profileController')
 const drawcontroller = require('./controllers/drawcontroller')
 const editController = require('./controllers/editController')
+const commentcontroller = require('./controllers/commentcontroller')
 // const upload = require('./controllers/uploadController')
 
 
@@ -84,7 +85,10 @@ app.set('view engine', 'ejs')
      
 
 app.get("/",indexcontroller)
+
 app.get('/manu', menuController)
+app.post('/comment/:id',authMiddleware,commentcontroller)
+
 app.post("/register",redirectIfAuth,stroreUsercontroller)
 app.post("/login",redirectIfAuth,loginUserController)
 
@@ -102,5 +106,4 @@ app.get('/create',authMiddleware,createController)
  
 app.listen(4000, () => {
     console.log("App listening on prot 4000");
-    
 })

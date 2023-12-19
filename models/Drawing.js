@@ -24,6 +24,9 @@ const DrawingSchema  = new  Schema(
         category:{
             type: String
         },
+        view:{
+            type: Number
+        },
         crateDate:{
             type: Date,
             default: Date.now()
