@@ -18,6 +18,7 @@ body{
 }
 .ower-pic{
     font-size: 3rem;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     padding: 3rem;
@@ -25,21 +26,23 @@ body{
     border-bottom: 2px solid #636262; /* เพิ่มเส้นใต้รูปภาพ */
 }
 
-
+img{
+    padding: .5rem;
+}
 .product{
 
     max-width: 100%;
-    width: 197vh;
-    column-count: 4;
+    width: 150vh;
+    column-count: 3;
     column-gap: 10px;
     margin: auto;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 2rem;
 
 }
 
 .profile-user {
- 
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,14 +57,17 @@ body{
 }
 .user-name {
     font-size: 4rem;
+    color: #ffffff;
 }
 .detail-profile{
     font-size: 1rem;
+    color: #ffffff;
     
 }
 
 .my-pic{
     font-size: 3rem;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     padding: 3rem;

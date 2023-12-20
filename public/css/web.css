@@ -7,6 +7,7 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
+ 
    
 
 
@@ -14,16 +15,20 @@
 :root{
     --main-color:#0013131a0000;
     --black:#13131a;
-    background: #ffffff;
-    --bg:#013131a0103;
+    background:#000000 ;
+    /* --bg:#013131a0103; */
     --border:.1rem solid rgba(255,255,255,.3);
 }
 
-
+                                                    /* แก้ตรงนี้จ้า */
+.text-content span{
+    font-size: 7rem;   
+     
+}
 
 .header{
     background: var(--bg);
-    background: #202020;
+    background: #0f0f0f;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,8 +44,10 @@
 
 body {
     height: 5rem;
-    min-height: 100vh;
-    /* background: url(pic/pexels2.jpeg); */
+    min-height: 10vh;
+    background: url('./images/space.jpg');
+    
+    z-index: 1;
     background-size: cover;
     background-position: center;
     background-size: cover;
@@ -59,6 +66,9 @@ body {
     height: 60px;
     border-radius: 100%; 
 }
+
+
+
 .navigation .btnlogin-popup{
 
     justify-content: center;

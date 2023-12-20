@@ -30,7 +30,9 @@ body {
 .comment__container.opened {
   display: block;
 }
-
+.comment {
+  background-color: rgba(0, 0, 0, 0);
+}
 .comment__container::before {
   content: "";
   background-color: rgb(170, 170, 170);

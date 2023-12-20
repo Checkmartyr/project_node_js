@@ -10,14 +10,15 @@ module.exports = async (req,res)=>{
     let posts = await Drawing.find({}).populate('crateDate').sort({crateDate:'desc'})
     
 
-    
+    console.log('post');
+    console.log(posts);
     let comments = {}
     if(UserData){
         // console.log(findname(req.session.userId));
     }
     for (let post of posts){
 
-        let comment= await Comment.find( {Drawing : post._id})
+        let comment= await Comment.find( {Drawing : post._id}).sort({createdAt:'desc'})
         comments[post._id] = {comment}
     }
     console.log();

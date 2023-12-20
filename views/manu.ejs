@@ -76,6 +76,7 @@
     <div class="popupcontent">
         <div class="showimg">
             <img src="pic/img1.jpg" class="large-image" alt="">
+            <div class="watermark">@Kayfun</div>
             <h1 class="index">01</h1>
         </div>
         <div class="comment">
@@ -85,6 +86,9 @@
                     <%if (loggedIn){%>
                 
                         <form method="post" id ="fromId" class="from-post opened">
+                            <script>
+                                var UserData = <%- JSON.stringify(UserData) %>;
+                            </script>
                     <%}%>
                     <%if (!loggedIn){%>
                 
@@ -96,9 +100,24 @@
                     <div class="comments">
                     </div>
                 </div>
-                
             </div>
         </div>
+    </div>
+    <style>
+        .btnBuy{
+            position: absolute;
+            padding: 20px 40px 20px 40px;
+            bottom: 10px;
+            left: 20%;
+            background-color: rgba(255, 255, 255, 0);
+            border: 2px solid rgb(215, 244, 51);
+            color: rgb(215, 244, 51);
+            border-radius: 0.5rem;
+        }
+    </style>
+    <div class="btnBuy">
+        <form action="" method="post" id="buybtn" style="display: none;"></form>
+         Buy
     </div>
 </div>
 <div class="products">

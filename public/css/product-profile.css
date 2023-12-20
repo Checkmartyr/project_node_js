@@ -17,10 +17,10 @@
 
 img{
     padding: 1rem;
-    margin: 5rem;
-    max-width: 50rem;
+    margin: .5rem;
+    /* max-width: 50rem;
     min-width: 50rem;
-    height: auto;
+    height: auto; */
   
 }
 .logo{
@@ -30,7 +30,7 @@ img{
     user-select: none;
 }
 #logo img{
-    max-width: 60px; /* กำหนดความกว้างของรูปภาพไม่เกิน 100% ของพื้นที่ที่รูปภาพอยู่ */
+    max-width: 60px;
     height: 60px;
     border-radius: 100%; 
 }

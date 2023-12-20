@@ -105,6 +105,6 @@ app.get('/logout', logoutController)
 app.get("/login_or_register",redirectIfAuth,loginregisterController)
 app.get('/create',authMiddleware,createController)
  
-app.listen(4000, () => {
-    console.log("App listening on prot 4000");
+app.listen(4002, () => {
+    console.log("App listening on prot 4002");
 })

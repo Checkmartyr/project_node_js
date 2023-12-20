@@ -7,6 +7,8 @@
 body{
     width: 100%;
     height: 100vh;
+    background-size: 500px;
+ 
 
 }
 .header{
@@ -15,24 +17,35 @@ body{
 img {
     width: 100%;
     height: auto;
+    overflow: hidden;
     border-radius: 20px;
+ 
   }
   
 .products {
-    
-    width: 197vh;
-    column-count: 6;
-    column-gap: 10px;
+
+    padding: 1.5rem;
+    width: 150vh;
+    column-count: 3;
+    column-gap: 1.5rem;
     margin: auto;
     flex-wrap: wrap;
+    border-radius: 20px;
     
-    
+  
+}
+.products h3{
+    text-align: center;
+}
+.products p{
+    text-align: center;
 }
 
 .products .item{
     border: 1px solid #cfcfcf; /* ความหนาขอบ 2px และสี #030303 */
     max-height:100vh;
     max-width: 120vh;
+    border-radius: 20px;
    
    
     overflow: hidden;
@@ -71,14 +84,25 @@ img {
     width: 100%;
     
 }
+.Buy {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
 
-
+/* Add a hover effect */
+.Buy:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 .item {
     
     gap: 10px;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+
     object-fit: cover;
     transition: 1s;
 
@@ -171,7 +195,7 @@ h3,h4{
     min-height: 75%;
     border-radius: 30px;
     /* padding-right: 20px; */
-    background-color: rgba(246, 246, 246, 0);
+    background-color: wheat;
 }
 .popup.active{
     transform: translate(-50%, -50%) scale(1);
@@ -184,7 +208,7 @@ h3,h4{
 .popup.active .large-image{
     opacity: 1;
     transition: opacity .5s;
-    transition-delay: 1s;
+    transition-delay: 0s;
 }
 
 .top-bar{
@@ -248,3 +272,97 @@ h3,h4{
     object-fit: contain;
     opacity: 0;
 }
+
+.Buy-now{
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 15px; 
+    margin: 10px;
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    cursor: pointer;
+}
+.Buy-now:hover {
+    background-color: #45a049;
+}
+
+.text-center{
+    font-size: 5rem;
+    padding: 2rem;
+    margin: 1rem;
+
+}
+
+.card-title{
+    margin: 1.5rem;
+}
+
+
+.submit_detail {
+    background-color: #4caf50; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px; /* Adjust the right margin for spacing */
+    cursor: pointer;
+  }
+  
+
+  .remove_detail {
+    background-color: #4caf50; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .maintain h5{
+
+    font-size: 3rem;
+    text-align: center;
+    padding: 5rem;
+    margin: 1rem;
+    color: #fffbfb;
+    position: absolute;
+    top: 17.77%; /* ตำแหน่งตรงกลางของรูป */
+    left: 50%; /* ตำแหน่งตรงกลางของรูป */
+    transform: translate(-50%, -50%); /* ย้ายข้อความกลับไป 50% ของตนเอง */
+    font-weight: bold; /* ตัวหนา */
+    text-align: center;
+    z-index: 2;
+    letter-spacing: 8px;
+  
+}
+
+.maintain img{
+    width: 100%;
+    height: 25vh;
+    position: relative;
+    top: -2rem;
+    object-fit: cover;
+    z-index: 1;
+ 
+}
+
+.watermark {
+    position: absolute;
+    top: 30%; /* Adjust the top position as needed */
+    left: 20%; /* Adjust the left position as needed */
+    transform: translate(-50%, -50%);
+    rotate: -45deg;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgba(233, 121, 121, 0.7); /* Set the color and opacity of the watermark */
+
+
+    z-index: 10; /* Ensure the watermark is above the image */
+  }
+  
+  .popupcontent {
+    position: relative;
+    
+
+  }
+  

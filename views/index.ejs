@@ -9,6 +9,21 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
       
     
+
+
+
+        <meta name="msapplication-tap-highlight" content="no">
+  
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+        <link href="./assets/favicon.ico" rel="icon">
+      
+   
+      
+      <link href="../css/main.3f6952e4.css" rel="stylesheet">
+    
+    
+
+
     <link rel="stylesheet" href="css/web.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/upload.css">
@@ -30,6 +45,7 @@
         
         <!--style.css-->
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="css/home-1.css" media="screen">
         
    
 
@@ -38,6 +54,7 @@
 
 
 <body>
+    
     <header class="header">
         <a href="/" class="logo" >
         <img src="../pic/Logo.png" alt=""></a>
@@ -47,6 +64,7 @@
             
             <a href="/">Home</a>
             <a href="/manu">Manu</a>
+
             <%if (!loggedIn){%>
                 
                 <a href="/login_or_register" class="btnlogin-popup">Login</a>
@@ -66,91 +84,38 @@
     </header>
 
 
-  
 
-	<!-- welcome-hero start
-    <section id="home" class="welcome-hero">
+
+
+
+    <header>
+
+      </header>
+      <!-- Add your site or app content here -->
+      <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/space.jpg')">
         <div class="container">
-            <div class="welcome-hero-txt">
-            <h1>Hello welcome to Kayfan websigh</h1>
-            </div>
-            <div class="welcome-hero-serch-box">
-                <div class="welcome-hero-form">
-                    <div class="single-welcome-hero-form">
-                        <h3>search</h3>
-                        <form action="index.html">
-                            <input type="text" placeholder="Ex: palce, resturent, food, automobile" />
-                        </form>
-                        <div class="welcome-hero-form-icon">
-                            <i class="flaticon-list-with-dots"></i>
-                        </div>
-                    </div>
-                  
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="hero-full-wrapper">
+                <div class="text-content">
+                  <h1>Hello,<br>
+                    <span id="typed-strings">
+                      <span>Wellcome to</span>
+                      <span>KayFun</span>
+                      <span>Space</span>
+                    </span>
+                    <span id="typed"></span>
+                  </h1>
                 </div>
-                <div class="welcome-hero-serch">
-                    <button class="welcome-hero-btn" onclick="window.location.href='#'">
-                         search  <i data-feather="search"></i> 
-                    </button>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-
-    </section></.welcome-hero-->
-    <!--welcome-hero end -->
-
-    <!--list-topics start -->
-    <!-- <section id="list-topics" class="list-topics">
-        <div class="container">
-            <div class="list-topics-content">
-                <ul>
-                    <li>
-                        <div class="single-list-topics-content">
-                            <div class="single-list-topics-icon">
-                                <i class="flaticon-restaurant"></i>
-                            </div>
-                            <h2><a href="#">resturent</a></h2>
-                            <p>150 listings</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-list-topics-content">
-                            <div class="single-list-topics-icon">
-                                <i class="flaticon-travel"></i>
-                            </div>
-                            <h2><a href="#">destination</a></h2>
-                            <p>214 listings</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-list-topics-content">
-                            <div class="single-list-topics-icon">
-                                <i class="flaticon-building"></i>
-                            </div>
-                            <h2><a href="#">hotels</a></h2>
-                            <p>185 listings</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-list-topics-content">
-                            <div class="single-list-topics-icon">
-                                <i class="flaticon-pills"></i>
-                            </div>
-                            <h2><a href="#">healthcaree</a></h2>
-                            <p>200 listings</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-list-topics-content">
-                            <div class="single-list-topics-icon">
-                                <i class="flaticon-transport"></i>
-                            </div>
-                            <h2><a href="#">automotion</a></h2>
-                            <p>120 listings</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div> --> 
+      </div>
+    
+    
+      
+      
 
 
 
@@ -164,14 +129,13 @@
         <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
             <% if(Post != null && Post.length > 0) { %>
                 <% for(let i = 0; i < Post.length; i++) { %>
-                    <!-- <p class="alert alert-danger">
-                        <%= Post[i] %>
-                    </p> -->
+                  
                     <div class="col">
                         <div class="card">
-                            <!-- <a href="/product/<%=Post[i]._id %>"> -->
+                             
                                 <img src="<%=Post[i].filePath %>" class="card-img-top" alt="...">
-                            <!-- </a> -->
+                                <div class="watermark">Kayfun</div>
+                             
                             <div class="card-body">
                                 <h5 class="card-title"><%=Post[i].title %></h5>
                                 <p class="card-text"><%=Post[i].description %></p>
@@ -200,13 +164,10 @@
  
 
 <!-- menu footer ends -->
-<
+
     
 
 
-<footer>
-
-<html>
 
 
   <footer class="footer">
@@ -226,10 +187,10 @@
         </a></li>
     </ul>
     <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="web.html">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="manu.html">Manu</a></li>
-      <li class="menu__item"><a class="menu__link" href="create.html">Create </a></li>
-      <li class="menu__item"><a class="menu__link" href="commu.html">Commu</a></li>
+      <li class="menu__item"><a class="menu__link" href="index.ejs">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="manu.ejs">Manu</a></li>
+      <li class="menu__item"><a class="menu__link" href="create.ejs">Create </a></li>
+      
      
 
     </ul>
@@ -241,6 +202,16 @@
 
 
 </footer>
+
+<!-- <footer class="footer-container text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        </div>
+      </div>
+    </div>
+  </footer> -->
 
 
     <script src="js/web.js"></script>
@@ -263,7 +234,19 @@
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
 
-       
+          
+        <script>
+            document.addEventListener("DOMContentLoaded", function (event) {
+               type();
+               movingBackgroundImage();
+            });
+          </script>
+          
+          
+          <script type="text/javascript" src="../js/main.70a66962.js"></script></body>
+          
+    
+    
     
 </body>
 </html>

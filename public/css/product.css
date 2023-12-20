@@ -39,3 +39,28 @@ body{
 h3,h5{
     color: rgb(0, 91, 228);
 }
+
+.watermark {
+    position: absolute;
+    top: 30%; /* Adjust the top position as needed */
+    left: 50%; /* Adjust the left position as needed */
+    transform: translate(-50%, -50%);
+    rotate: -45deg;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgba(155, 155, 155, 0.4); /* Set the color and opacity of the watermark */
+
+
+    z-index: 10; /* Ensure the watermark is above the image */
+  }
+  
+  .items {
+    position: relative;
+    
+
+  }
+
+.col{
+    display: flex;
+}
+  
